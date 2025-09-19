@@ -1,0 +1,644 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro Global Trust Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles/base/variables.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/metro_bank_logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'styles/base/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/side-bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/bottom-nav.css' %}" />
+  </head>
+  <body class="is-dashboard">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <a class="brand-mark" href="{% url 'portfolio' %}" aria-label="Home">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <rect
+                x="2"
+                y="2"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".9"
+              />
+              <rect
+                x="13"
+                y="2"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".65"
+              />
+              <rect
+                x="2"
+                y="13"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".65"
+              />
+              <rect
+                x="13"
+                y="13"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".4"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="spacer"></div>
+
+        <nav class="nav">
+          <div class="nav-item">
+            <a class="nav-btn active" href="{% url 'portfolio' %}" aria-label="Dashboard">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="8" height="8" rx="2"></rect>
+                  <rect x="13" y="3" width="8" height="12" rx="2"></rect>
+                  <rect x="3" y="13" width="8" height="8" rx="2"></rect>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'transfer' %}" aria-label="Transfer">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h13l-3-3"></path>
+                  <path d="M17 17H4l3 3"></path>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Transfer</span>
+          </div>
+
+           <div class="nav-item">
+            <a class="nav-btn" href=" {% url 'contactus' %}" aria-label="Deposit">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                  <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                  <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Deposit</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'mycards' %}" aria-label="Stocks">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Stocks</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'profile' %}" aria-label="Profile">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Profile</span>
+          </div>
+        </nav>
+
+        <div class="spacer"></div>
+
+        <div class="nav-item">
+          <a class="nav-btn danger" href="{% url 'logout' %}" aria-label="Log out">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M15 3h-5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h5"></path>
+                <path d="M10 12h11"></path>
+                <path d="M18 9l3 3-3 3"></path>
+              </svg>
+            </span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </div>
+      </aside>
+
+      <main class="container content" tabindex="-1">
+        <header class="toolbar">
+          <div class="title">
+            <h1>Welcome back {{portfolio.first_name}} {{portfolio.last_name}} 👋</h1>
+            <p class="muted">
+              Monitor and control what happens with your money today for
+              financial health.
+            </p>
+          </div>
+          <div class="actions">
+            <a href="mailto:support@metroglobaltrust.com">
+            <button class="btn btn-bank-primary btn-sm" type="button">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M12 15V3"></path>
+              </svg>
+              <span>Export</span>
+            </button>
+            </a>
+            <button
+              class="btn btn-bank-outline btn-sm date-btn"
+              type="button"
+              aria-label="Current date"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span id="currentDateText"></span>
+            </button>
+          </div>
+        </header>
+
+        <section class="dashboard-grid">
+          <div class="dashboard-row row-1">
+            <article class="card account">
+              <div class="card-header">
+                <div>
+                  <h3>Checking Account</h3>
+                  <p class="subtle">You can view your account details</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="balance">{{ portfolio.amount_sign }}{{account_total|intcomma}}</div>
+                <div class="btn-row">
+                  <a href="{% url 'transfer' %}">
+                  <button class="btn btn-bank-primary btn-sm" type="button">
+                    Transfer
+                  </button>
+                  </a>
+                  <a href="{% url 'profile' %}">
+                  <button class="btn btn-bank-outline btn-sm" type="button">
+                    Profile
+                  </button>
+                </a>
+                </div>
+              </div>
+
+              <div class="subcard">
+                <div class="subcard-header">
+                  <span class="subtle">My Cards</span>
+                  <button class="dots" aria-label="More">•••</button>
+                </div>
+                <div class="cards-row">
+                  <div class="mini-card">
+                    <div class="mini-card-top">
+                      <span class="muted">Virtual card</span>
+                      <span class="brand">VISA</span>
+                    </div>
+                    <div class="mini-card-balance">{{ portfolio.card_total_balance }}</div>
+                    <div class="mini-card-meta">
+                      <span>•••• •••• •••• {{ portfolio.card_number_one }}</span>
+                      <span class="muted">Expiry {{ portfolio.card_date_one }}</span>
+                    </div>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-card-top">
+                      <span class="muted">Virtual card</span>
+                      <span class="brand">VISA</span>
+                    </div>
+                    <div class="mini-card-balance">{{ portfolio.card_available_credit}}</div>
+                    <div class="mini-card-meta">
+                      <span>•••• •••• •••• {{ portfolio.card_number_two }}</span>
+                      <span class="muted">Expiry {{ portfolio.card_date_two }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card stats">
+              <div class="card-header between">
+                <div class="title-wrap">
+                  <h3>Money Statistics</h3>
+                  <span class="sm">Analysis to decipher your money</span>
+                </div>
+                <div class="legend">
+                  <span class="legend-item"
+                    ><i class="dot dot-primary"></i>Income</span
+                  >
+                  <span class="legend-item"
+                    ><i class="dot dot-secondary"></i>Investment</span
+                  >
+                  <span class="legend-item"
+                    ><i class="dot dot-dark"></i>Expense</span
+                  >
+                </div>
+              </div>
+              <div class="chart">
+                <div class="y-axis">
+                  <span>1000</span>
+                  <span>800</span>
+                  <span>600</span>
+                  <span>400</span>
+                  <span>200</span>
+                  <span>0</span>
+                </div>
+                <div class="plot">
+                  <div class="bars">
+                    <div class="bar-group" style="--a: 40%; --b: 65%; --c: 30%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 28%; --b: 55%; --c: 20%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 52%; --b: 78%; --c: 45%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 60%; --b: 82%; --c: 48%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 35%; --b: 58%; --c: 28%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 68%; --b: 90%; --c: 55%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 42%; --b: 70%; --c: 32%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 75%; --b: 95%; --c: 62%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 54%; --b: 80%; --c: 38%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 32%; --b: 52%; --c: 22%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 62%; --b: 84%; --c: 50%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                    <div class="bar-group" style="--a: 58%; --b: 76%; --c: 36%">
+                      <b class="bar income" style="height: var(--a)"></b>
+                      <b class="bar invest" style="height: var(--b)"></b>
+                      <b class="bar expense" style="height: var(--c)"></b>
+                    </div>
+                  </div>
+                  <div class="months">
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+                    <span>Oct</span>
+                    <span>Nov</span>
+                    <span>Dec</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="dashboard-row row-2">
+            <article class="card savings">
+              <div class="card-header between">
+                <div class="title-wrap">
+                  <h3>Savings Plan</h3>
+                  <span class="sm">Plan to increase your savings</span>
+                </div>
+              </div>
+              <ul class="savings-list">
+                <li>
+                  <div class="info">
+                    <div>
+                      <div class="title">Traveling</div>
+                      <div class="note muted">Achieved in 6 month</div>
+                    </div>
+                  </div>
+                  <div class="amount">{{ portfolio.amount_sign }}{{portfolio.level_one|intcomma}}</div>
+                  <div class="progress"><span style="width: 62%"></span></div>
+                </li>
+                <li>
+                  <div class="info">
+                    <div>
+                      <div class="title">College</div>
+                      <div class="note muted">Achieved in 9 month</div>
+                    </div>
+                  </div>
+                  <div class="amount">{{ portfolio.amount_sign }}{{portfolio.level_two|intcomma}}</div>
+                  <div class="progress"><span style="width: 38%"></span></div>
+                </li>
+                <li>
+                  <div class="info">
+                    <div>
+                      <div class="title">Financial Saving</div>
+                      <div class="note muted">In progress</div>
+                    </div>
+                  </div>
+                  <div class="amount">{{ portfolio.amount_sign }}{{portfolio.level_three|intcomma}}</div>
+                  <div class="progress"><span style="width: 70%"></span></div>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card history">
+              <div class="card-header between">
+                <h3>Transaction History</h3>
+              </div>
+
+              <div class="table">
+                <div class="row head">
+                  <div>Name</div>
+                  <div>Account Number</div>
+                  <div>Date</div>
+                  <div class="right">Amount</div>
+                </div>
+                {% for transaction in amount_to_transfer %}
+                
+                <div class="row">
+                  
+                  <div class="person">
+                    
+                    <img
+                      class="avatar"
+                      src="{% static 'assets/images/765-default-avatar.png' %}"
+                      alt="{{ transaction.beneficiary_name }}"
+                    />
+                    <span>{{ transaction.beneficiary_name }}</span>
+                  </div>
+                  <div>{{ transaction.account_number }}</div>
+                  <div>{{ transaction.transaction_date }}</div>
+                  <div class="right">
+                    {% if transaction.transaction_type == "credit" %}
+                      +{{ transaction.amount_sign }}{{ transaction.amount_to_transfer|intcomma }}
+                    {% else %}
+                      -{{ transaction.amount_sign }}{{ transaction.amount_to_transfer|intcomma }}
+                    {% endif %}
+                  </div>                  
+                </div>
+                {% endfor %}
+                
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Secondary">
+      <ul>
+        <li class="active">
+          <a href="{% url 'portfolio' %}" aria-label="Dashboard">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="8" height="8" rx="2"></rect>
+                <rect x="13" y="3" width="8" height="12" rx="2"></rect>
+                <rect x="3" y="13" width="8" height="8" rx="2"></rect>
+              </svg>
+            </span>
+            <span class="label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'transfer' %}" aria-label="Transfer">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 7h13l-3-3"></path>
+                <path d="M17 17H4l3 3"></path>
+              </svg>
+            </span>
+            <span class="label">Transfer</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'contactus' %}" aria-label="Deposit">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+              </svg>
+            </span>
+            <span class="label">Deposit</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'mycards' %}" aria-label="Stocks">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+              </svg>
+            </span>
+            <span class="label">Stocks</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'profile' %}" aria-label="Profile">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <span class="label">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      (function () {
+        const el = document.getElementById("currentDateText");
+        if (!el) return;
+        const now = new Date();
+        const fmt = new Intl.DateTimeFormat(undefined, {
+          weekday: "short",
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+        el.textContent = fmt.format(now);
+      })();
+    </script>
+  </body>
+</html>

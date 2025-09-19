@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextrust Equity Bank</title>
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/nexus_logo.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+        <div class="container-fluid secOne">
+          <nav class="container navbar navbar-expand-lg  ">
+      
+            <div class="container">
+              <a href="{% url 'home' %}">
+              <img src="{% static 'images/Atlas_Equity__2_-removebg-preview.png' %}" alt="" width="200px" class="imgFulton">
+            </a>
+              <button
+                class="navbar-toggler bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                  
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white fw-bold text-decoration-none" href="#">PERSONAL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-white fw-bold text-decoration-none" href="#">SMALL BUSINESS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-white fw-bold text-decoration-none" href="#">COMMERCIAL</a>
+                  </li>
+                  <li class="nav-item text-decoration-none">
+                    <a class="nav-link text-white fw-bold" href="#">INVESTMENTS</a>
+                  </li>
+                  <li class="nav-item text-decoration-none">
+                    <a class="nav-link text-white fw-bold" href="#">EDUCATION</a>
+                  </li>
+    
+                  <ul class="d-lg-none navbar-nav me-auto mb-2 mb-lg-0"><li class="text-decoration-none list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold" >OPEN NOW</a></li>
+                    <li class="text-decoration-none list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">RATES</a></li>
+                    <li class="list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">LOCATIONS</a></li>
+                    <li class="list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">CONTACT</a></li>
+                    <li class="list-unstyled nav-item"><a href="{% url 'about' %}" class="text-decoration-none nav-link text-white fw-bold">ABOUT</a></li>
+                  </ul>
+                </ul>
+    
+                <span class="">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                    <li>
+                      <a href="{% url 'signin' %}">
+                      <button class="btn btn-light me-3" type="submit"><i class="fa-solid fa-lock"></i>
+                       Login
+                      </button>
+                    </a>
+                    </li>
+                   
+                  </ul>
+                </span>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container ">
+        <p class="py-3 firstp">HOME / <span>ABOUT</span></p>
+    </div>
+    <div class="container contain1">
+        <h1 class="contain1h1 pb-4">About Nextrust Equity Bank</h1>
+        <p>Since Nextrust Equity Bank opened its doors in 1882, we have strived to deliver the best banking experience for our customers. Our focus on customers has allowed us to grow along with you.</p>
+        <p>Today, as part of Nextrust Equity Financial Corporation, an over $30 billion financial services holding company, Nextrust Equity Bank offers a broad array of financial products and services in Pennsylvania, New Jersey, Maryland, Delaware, and Virginia.</p>
+        <p>We're proud to offer convenience in neighborhoods across the region with over 230+ financial centers and ATMs.</p>
+    </div>
+    <section class="contain2">
+        <h3 class="contain2h3 fw-bold">Additional Resources</h3>
+        <div class="container flex1">
+            <div>
+                <img src="{% static 'images/globe.svg' %}" alt="">
+                <h5>Banking Accessibility</h5>
+                <p>Nextrust Equity Bank is committed to making banking more accessible and convenient for everyone. </p>
+                <a href="#" class="xxx">Learn More <i class="fa-solid fa-angles-right"></i></a>
+            </div>
+            <div>
+                <img src="{% static 'images/logistics.svg' %}" alt="">
+                <h5>Supplier Diversity</h5>
+                <p>Our supplier diversity commitment is rooted in our core values of ethics and integrity.</p>
+                <a href="#" class="xxx">Learn More <i class="fa-solid fa-angles-right"></i></a>
+            </div>
+            <div>
+                <img src="{% static 'images/bank.svg' %}" alt="">
+                <h5>Community Reinvestment Act Public File</h5>
+                <p>Nextrust Equity Bank is committed to helping meet the credit needs of the communities we serve. </p>
+                <a href="#" class="xxx">Learn More<i class="fa-solid fa-angles-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="contain3">
+    <section class="container sectionSix ">
+        <div>
+          <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+          <h2 class="fw-bold ">VISIT US</h2>
+          <p>Locate a branch near you</p>
+          <a href="" class="text-decoration-none txt">BRANCH LOCATOR <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+  
+        <div>
+          <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+          <h2 class="fw-bold " >MESSAGE US</h2>
+          <p>Visit the contact us page</p>
+          <a href="" class="text-decoration-none txt">CONTACT FORM <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+  
+        <div>
+          <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+          <h2 class="">CALL US</h2>
+          <p>1-800-385-8664</p>
+          <a href="" class="text-decoration-none txt">PHONE DIRECTORY <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+  
+        <div>
+          <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+          <h2 class="">SCHEDULE MEETING</h2>
+          <p>Book an Appointment</p>
+          <a href="" class="text-decoration-none txt">APPOINTMENT FORM <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+      </section>
+    </section>
+      <section class="container-fluid sectionSeven ">
+        <div class="container py-3">
+       <h2 >Important Disclosures</h2>
+       <div class="sectionSevenText">
+        <p>At certain places on this site, you may find links to web sites operated by or under the control of third parties. Nextrust Equity Financial Corporation or any of its subsidiaries, including Nextrust Equity Bank, N.A. (which operated as the following: Nextrust Equity Financial Advisors, Nextrust Equity Leasing Company, Nextrust Equity Private Bank, and Nextrust Equity Mortgage Company) do not endorse, approve, certify, or control those external sites and do not guarantee the accuracy or completeness of the information contained on those web sites. Nextrust Equity Financial Corporation or its subsidiaries may not be affiliated with organizations or third parties mentioned on the page.</p>
+        <div class="sectionSevenImg">
+          <img src="{% static 'images/fdic-member-logo-vector.png' %}" alt="" width="120px" class="me-3">
+          <img src="{% static 'images/ehl.png' %}" alt="" width="70px">
+        </div>
+       </div>
+      </div>
+       <div class="sectionSevenText2">
+        <p>Securities and Insurance Products:
+          •Not FDIC-Insured •Not Insured by any Federal Government Agency
+          • No Financial Institution Guarantee •Subject to Risk
+          •May Lose Value •Not a Deposit</p>
+       </div>
+      </section>
+      <section class="container-fluid sectionEight">
+        <div class="container sectionEightSec py-3">
+        <div>
+          <img src="{% static 'images/footer logo.png' %}" alt="" width="200px" class="py-3">
+          <p class="text-white fw-bold">SECURITY & FRAUD INFORMATION <i class="fa-solid fa-angles-right"></i></p>
+          <P class="text-white fw-bold">ALERT US TO FRAUD ACTIVITY <i class="fa-solid fa-angles-right"></i></P>
+        </div>
+        <div>
+        <ul class="list-unstyled mt-5">
+          <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold ">INVESTOR RELATIONS <i class="fa-solid fa-angles-right"></i></a></li>
+          <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">PRIVACY POLICY <i class="fa-solid fa-angles-right"></i></a></li>
+          <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">ABOUT NEXTRUST EQUITY BANK <i class="fa-solid fa-angles-right"></i></a></li>
+          <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">CAREERS <i class="fa-solid fa-angles-right"></i></a></li>
+         </ul>
+        </div>
+        <div>
+        <button class="btn btn-warning p-2"><i class="fa-regular fa-credit-card"></i> Report Lost or Stolen Card</button>
+      </div>
+    </div>
+      </section>
+      <section class="bg-dark">
+        <div class="container nine">
+        <p class="text-white">© 2024 Nextrust Equity Financial Corporation. All rights reserved.</p>
+        <ul class="nineUl">
+          <li><a href="#">Routing Number</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+      </section>
+
+     <!-- Chatra {literal} -->
+<script>
+  (function(d, w, c) {
+      w.ChatraID = '3FEJLoG5duPww7YTf';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+          (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+  })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+    
+</body>
+</html>

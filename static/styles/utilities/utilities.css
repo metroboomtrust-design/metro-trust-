@@ -1,0 +1,17 @@
+/* Utility classes */
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.cta-row .btn {
+  width: 100%;
+}
+.d-none {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
+}

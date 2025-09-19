@@ -1,0 +1,322 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nextrust Equity Bank - IMF Verification</title>
+    <link rel="shortcut icon" href="{% static 'images/nexus_logo.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'images/metro_bank_logo.png' %}" type="image/x-icon">
+    
+    <style>
+        :root {
+            --primary: #1D7B54;
+            --primary-dark: #15603d;
+            --danger: #ef233c;
+            --warning: #f77f00;
+            --dark: #2b2d42;
+            --light: #edf2f4;
+            --success: #2ec4b6;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-screen-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .main-content {
+            background: white;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .receipt-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        .alert {
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        .alert-warning {
+            background-color: #fff3e0;
+            color: #e65100;
+            border-left: 4px solid var(--warning);
+        }
+
+        .alert-danger {
+            background-color: #ffebee;
+            color: var(--danger);
+            border-left: 4px solid var(--danger);
+        }
+
+        .alert-heading {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .receipt-card {
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .receipt-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .receipt-header h4 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.75rem;
+        }
+
+        .receipt-status-badge {
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-warning {
+            background-color: var(--warning);
+        }
+
+        .receipt-body {
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            height: auto;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(29, 123, 84, 0.2);
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            display: block;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .receipt-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 2.5rem 0;
+        }
+
+        .receipt-section-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            font-size: 1.15rem;
+        }
+
+        .receipt-label {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .receipt-value {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .btn {
+            border-radius: 10px;
+            padding: 1.25rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.15rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            opacity: 0.95;
+        }
+
+        .compliance-notice {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-left: 4px solid var(--primary-dark);
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.7;
+        }
+
+        .compliance-notice strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .receipt-container {
+                padding: 1.5rem;
+            }
+            
+            .receipt-body {
+                padding: 1.75rem;
+            }
+            
+            .receipt-header {
+                padding: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .receipt-header h4 {
+                font-size: 1.5rem;
+            }
+            
+            .form-control, .btn {
+                padding: 1rem;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="full-screen-container">
+        <div class="main-content">
+            <div class="receipt-container">
+                <div class="alert alert-warning">
+                    <h4 class="alert-heading">IMF Verification Required</h4>
+                    <p class="mb-0">Your transfer of {{ amount }} requires IMF verification for security purposes.</p>
+                </div>
+                
+                <div class="receipt-card">
+                    <div class="receipt-header">
+                        <h4>Verification Required</h4>
+                        <div class="receipt-status-badge bg-warning">
+                            IMF Locked
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-body">
+                        {% if messages %}
+                            <div class="alert alert-danger">
+                                {% for message in messages %}
+                                    <p class="mb-0">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        
+                        <div class="compliance-notice">
+                            <strong>Compliance Notice:</strong> As part of international transfer compliance and anti-money laundering regulations, you are required to submit a valid IMF clearance code to authorize this transaction. The code should have been provided to you via secure channels.
+                        </div>
+                        
+                        <form method="POST" action="{% url 'imf_verification' transaction.id %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="imf_code">IMF Verification Code</label>
+                                <input type="text" class="form-control" id="imf_code" name="imf_code" 
+                                       placeholder="Enter your 6-digit verification code" required>
+                                
+                            </div>
+                            
+                            <div class="receipt-divider"></div>
+                            
+                            <div class="receipt-section-title">Transaction Details</div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Amount</span>
+                                <span class="receipt-value">{{ amount }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Recipient</span>
+                                <span class="receipt-value">{{ transaction.beneficiary_name }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Bank</span>
+                                <span class="receipt-value">{{ transaction.bank_name }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Account Number</span>
+                                <span class="receipt-value">{{ transaction.account_number }}</span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block mt-4">
+                                Verify and Complete Transfer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

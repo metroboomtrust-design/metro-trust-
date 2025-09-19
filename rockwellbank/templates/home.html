@@ -1,0 +1,1238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML, CSS, and JavaScript Project" />
+    <title>Metro Global Trust Bank</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="{% static 'images/metro_bank_logo.png' %}" type="image/x-icon">
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="topbar" aria-label="utility bar">
+        <div class="topbar-inner">
+          <a class="topbar-phone" href="tel:8003825465">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>800-382-5465</span>
+          </a>
+          <nav class="utility-links" aria-label="Utility">
+            <a href="#">About Us</a>
+            <a href="#">Locations</a>
+          </nav>
+        </div>
+      </div>
+      <div class="mainbar">
+        <button
+          class="hamburger"
+          aria-label="Open menu"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="mainnav" aria-label="Primary">
+          <button class="nav-link" data-mega="personal" aria-expanded="false">
+            Personal <br />
+            Banking
+          </button>
+          <button class="nav-link" data-mega="business" aria-expanded="false">
+            Small <br />
+            Business
+          </button>
+          <button class="nav-link" data-mega="commercial" aria-expanded="false">
+            Commercial <br />
+            &amp; Specialty
+          </button>
+          <button class="nav-link" data-mega="wealth" aria-expanded="false">
+            Wealth <br />
+            Management
+          </button>
+        </nav>
+
+        <a class="brand" href="" aria-label="Logo text">
+          <span class="brand-text">Metro Global Trust Bank</span>
+        </a>
+
+        <div class="header-actions">
+          <button class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-bank-primary header-login" href="#userId">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            LOG IN
+          </a>
+        </div>
+      </div>
+      <div class="fdic-bar" aria-label="FDIC notice">
+        <div class="container-md fdic-inner">
+          <span class="fdic-bank">Metro Global Trust Bank</span>
+          <span class="fdic-header">FDIC</span>
+          <span class="fdic-copy"
+            >FDIC-Insured · Backed by the full faith and credit of the U.S.
+            Government</span
+          >
+        </div>
+      </div>
+      <!-- Mega layer (desktop overlay) -->
+      <div class="mega-layer" id="megaLayer" hidden>
+        <div class="mega-dim" aria-hidden="true"></div>
+        <aside
+          class="mega-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Primary navigation"
+        >
+          <!-- <nav class="mega-tabs" aria-label="Sections">
+            <button
+              class="mega-tab"
+              data-mega="personal"
+              aria-controls="mega-personal"
+              aria-selected="false"
+            >
+              Personal Banking
+            </button>
+            <button
+              class="mega-tab"
+              data-mega="business"
+              aria-controls="mega-business"
+              aria-selected="false"
+            >
+              Small Business
+            </button>
+            <button
+              class="mega-tab"
+              data-mega="commercial"
+              aria-controls="mega-commercial"
+              aria-selected="false"
+            >
+              Commercial &amp; Specialty
+            </button>
+            <button
+              class="mega-tab"
+              data-mega="wealth"
+              aria-controls="mega-wealth"
+              aria-selected="false"
+            >
+              Wealth Management
+            </button>
+          </nav> -->
+          <div class="mega-scroll">
+            <div class="mega" id="mega-personal" hidden>
+              <div class="container-md mega-inner">
+                <div class="mega-col">
+                  <h4>Accounts</h4>
+                  <ul>
+                    <li><a href="#">Checking &amp; Savings Accounts</a></li>
+                    <li><a href="#">Credit Cards &amp; Personal Loans</a></li>
+                    <li><a href="#">Mortgages &amp; Home Loans</a></li>
+                    <li><a href="#">Auto Loans</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h4>Digital</h4>
+                  <ul>
+                    <li><a href="#">Online &amp; Mobile Banking</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col featured">
+                  <h4>Featured</h4>
+                  <ul>
+                    <li><a href="#">Apply for a Checking Account</a></li>
+                    <li><a href="#">Compare Credit Cards</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mega" id="mega-business" hidden>
+              <div class="container-md mega-inner">
+                <div class="mega-col">
+                  <h4>Banking</h4>
+                  <ul>
+                    <li><a href="#">Business Checking &amp; Savings</a></li>
+                    <li><a href="#">Business Credit Cards</a></li>
+                    <li><a href="#">Business Loans &amp; Credit Lines</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h4>Operations</h4>
+                  <ul>
+                    <li><a href="#">Cash Management</a></li>
+                    <li><a href="#">Merchant Services</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mega" id="mega-commercial" hidden>
+              <div class="container-md mega-inner">
+                <div class="mega-col">
+                  <h4>Services</h4>
+                  <ul>
+                    <li><a href="#">Corporate Banking</a></li>
+                    <li><a href="#">Treasury Management</a></li>
+                    <li><a href="#">Commercial Real Estate</a></li>
+                    <li><a href="#">Equipment Finance</a></li>
+                    <li><a href="#">Capital Markets</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mega" id="mega-wealth" hidden>
+              <div class="container-md mega-inner">
+                <div class="mega-col">
+                  <h4>Wealth Services</h4>
+                  <ul>
+                    <li><a href="#">Investment Services</a></li>
+                    <li><a href="#">Financial Planning</a></li>
+                    <li><a href="#">Trust Services</a></li>
+                    <li><a href="#">Private Banking</a></li>
+                    <li><a href="#">Retirement Planning</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <!-- Mobile drawer -->
+      <div class="mobile-drawer" id="mobileNav" hidden>
+        <div class="drawer-overlay" aria-hidden="true"></div>
+        <aside
+          class="drawer-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main navigation"
+        >
+          <div class="drawer-header">
+            <button class="drawer-close" aria-label="Close menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="drawer-search" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <nav class="drawer-nav">
+            <button class="drawer-accordion" aria-expanded="false">
+              Personal Banking
+            </button>
+            <ul class="drawer-list" hidden>
+              <li><a href="#">Checking &amp; Savings Accounts</a></li>
+              <li><a href="#">Credit Cards &amp; Personal Loans</a></li>
+              <li><a href="#">Mortgages &amp; Home Loans</a></li>
+              <li><a href="#">Auto Loans</a></li>
+              <li><a href="#">Online &amp; Mobile Banking</a></li>
+            </ul>
+            <button class="drawer-accordion" aria-expanded="false">
+              Small Business
+            </button>
+            <ul class="drawer-list" hidden>
+              <li><a href="#">Business Checking &amp; Savings</a></li>
+              <li><a href="#">Business Credit Cards</a></li>
+              <li><a href="#">Business Loans &amp; Credit Lines</a></li>
+              <li><a href="#">Cash Management</a></li>
+              <li><a href="#">Merchant Services</a></li>
+            </ul>
+            <button class="drawer-accordion" aria-expanded="false">
+              Commercial &amp; Specialty
+            </button>
+            <ul class="drawer-list" hidden>
+              <li><a href="#">Corporate Banking</a></li>
+              <li><a href="#">Treasury Management</a></li>
+              <li><a href="#">Commercial Real Estate</a></li>
+              <li><a href="#">Equipment Finance</a></li>
+              <li><a href="#">Capital Markets</a></li>
+            </ul>
+            <button class="drawer-accordion" aria-expanded="false">
+              Wealth Management
+            </button>
+            <ul class="drawer-list" hidden>
+              <li><a href="#">Investment Services</a></li>
+              <li><a href="#">Financial Planning</a></li>
+              <li><a href="#">Trust Services</a></li>
+              <li><a href="#">Private Banking</a></li>
+              <li><a href="#">Retirement Planning</a></li>
+            </ul>
+            <div class="drawer-meta">
+              <a href="#">About Us</a>
+              <a href="#">Locations</a>
+              <a href="tel:8003825465"
+                ><i class="fa-solid fa-phone"></i> 800-382-5465</a
+              >
+            </div>
+          </nav>
+          <div class="drawer-footer">
+            <a class="btn btn-bank-primary drawer-login" href="#userId"
+              >LOG IN</a
+            >
+          </div>
+        </aside>
+      </div>
+    </header>
+    <section class="hero" aria-label="Hero">
+      <div class="container-md hero-inner">
+        <div class="hero-content">
+          <div class="triangle"></div>
+          <h1 class="hero-title">
+            Drive to reach your dreams.Partnership that pays off.
+          </h1>
+          <p class="hero-subtitle">
+            Experience powerful banking with a personal touch.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-bank-primary" href="#finder-title"
+              >Experience Better Banking</a
+            >
+            <a class="btn btn-bank-outline" href="#featured-title"
+              >LEARN MORE</a
+            >
+          </div>
+        </div>
+
+        <div class="login-holder">
+          <section class="login-panel" aria-labelledby="login-title">
+            <div class="login-left">
+              <h3 id="login-title">Log in to banking services</h3>
+              <nav class="login-links" aria-label="help links">
+                <a href="#">Enroll for access</a>
+                <a href="#">Forgot ID or password</a>
+              </nav>
+            </div>
+
+            <form class="login-form" action="" method="post" novalidate>
+              {%csrf_token%}
+              {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+              {% endif %}
+              <div class="account-type">
+                <label class="visually-hidden" for="accountType"
+                  >Account Type</label
+                >
+                <select id="accountType" name="accountType">
+                  <option>Digital Banking</option>
+                  <option>Credit Card</option>
+                  <option>Mortgage</option>
+                </select>
+                <button
+                  type="button"
+                  class="dropdown-btn"
+                  aria-label="Toggle account type"
+                >
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div class="field">
+                <label for="userId">User ID</label>
+                <input id="userId" name="username" type="text" inputmode="text" />
+              </div>
+
+              <div class="field password-field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" />
+                <button
+                  type="button"
+                  class="reveal-btn"
+                  aria-label="Show password"
+                >
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <button class="btn btn-bank-primary login-submit" type="submit">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Log in
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="help" aria-labelledby="help-title">
+      <div class="container-md">
+        <h2 id="help-title" class="help-title">How can we help you?</h2>
+        <div class="help-grid">
+          <div class="help-card">
+            <div class="help-circle">
+              <span
+                class="icon-mask"
+                style="
+                  -webkit-mask-image: url('assets/icons/FHB-Check.svg');
+                  mask-image: url('assets/icons/FHB-Check.svg');
+                "
+              ></span>
+            </div>
+            <a href="#" class="help-link">Checking Accounts</a>
+          </div>
+          <div class="help-card">
+            <div class="help-circle">
+              <span
+                class="icon-mask"
+                style="
+                  -webkit-mask-image: url('assets/icons/FHB-Piggy-bank.svg');
+                  mask-image: url('assets/icons/FHB-Piggy-bank.svg');
+                "
+              ></span>
+            </div>
+            <a href="#" class="help-link">Savings Accounts</a>
+          </div>
+          <div class="help-card">
+            <div class="help-circle">
+              <span
+                class="icon-mask"
+                style="
+                  -webkit-mask-image: url('assets/icons/FHB-hand-w-dollar-sign-outline.svg');
+                  mask-image: url('assets/icons/FHB-hand-w-dollar-sign-outline.svg');
+                "
+              ></span>
+            </div>
+            <a href="#" class="help-link">Loans</a>
+          </div>
+          <div class="help-card">
+            <div class="help-circle">
+              <span
+                class="icon-mask"
+                style="
+                  -webkit-mask-image: url('assets/icons/FHB-cards.svg');
+                  mask-image: url('assets/icons/FHB-cards.svg');
+                "
+              ></span>
+            </div>
+            <a href="#" class="help-link">Credit Cards</a>
+          </div>
+          <div class="help-card">
+            <div class="help-circle">
+              <span
+                class="icon-mask"
+                style="
+                  -webkit-mask-image: url('assets/icons/FHB-Treasury-Management-Outline.svg');
+                  mask-image: url('assets/icons/FHB-Treasury-Management-Outline.svg');
+                "
+              ></span>
+            </div>
+            <a href="#" class="help-link">Investing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="container-md">
+        <div class="featured-header">Featured</div>
+        <h2 id="featured-title" class="featured-title">Banking Advisory</h2>
+        <div class="featured-grid">
+          <article class="featured-card">
+            <img
+              src="{% static 'assets/featured/FeaturedHomeLeftPersonal.jpg' %}"
+              alt="Family at home"
+            />
+            <h3>Individual</h3>
+            <p>
+              We offer a wide selection of checking accounts, savings accounts
+              and credit cards to perfectly suit your everyday financial needs.
+            </p>
+            <div class="featured-cta">
+              <a href="#" class="learn-link"
+                >LEARN MORE
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+          </article>
+          <article class="featured-card">
+            <img
+              src="{% static 'assets/featured/Q424FeaturedHomeMiddle.jpg' %}"
+              alt="Personal financing"
+            />
+            <h3>Capital Management</h3>
+            <p>
+              We provide tailored capital management strategies designed to help optimize growth, reduce risks, and strengthen long-term financial stability.
+            </p>
+            <div class="featured-cta">
+              <a href="#" class="learn-link"
+                >LEARN MORE
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+          </article>
+          <article class="featured-card">
+            <img
+              src="{% static 'assets/featured/Q424FeaturedHomeMiddle.jpg' %}"
+              alt="Small business meeting"
+            />
+            <h3>Startup Banking</h3>
+            <p>
+              We support startups with flexible accounts, funding solutions, and advisory services to fuel growth, innovation, and financial success.
+            </p>
+            <div class="featured-cta">
+              <a href="" class="learn-link"
+                >LEARN MORE
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+          </article>
+        </div>
+        <div class="featured-dots" role="tablist" aria-label="Featured slides">
+          <button aria-current="true" aria-label="Slide 1"></button>
+          <button aria-label="Slide 2"></button>
+          <button aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="dream" aria-labelledby="dream-title">
+      <div class="container-md dream-inner">
+        <div class="dream-copy">
+          <div class="dream-eyebrow">Your Trusted
+            Banking Partner.</div>
+          <h2 id="dream-title" class="dream-title">
+            Your small business deserves big advantages. Grow your business with banking solutions from loans to merchant services.
+          </h2>
+          <a class="dream-link" href="#">Learn more</a>
+          <div class="dream-nav">
+            <button class="btn btn-bank-outline" aria-label="Previous">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-bank-primary" aria-label="Next">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="dream-visual">
+          <div class="dream-images">
+            <div class="dream-images-track" id="dreamImagesTrack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn" aria-labelledby="learn-title">
+      <div class="container-md">
+        <div class="learn-header">
+          <h2 id="learn-title" class="learn-title">
+            Stay smart with your money
+          </h2>
+          <button class="learn-cta">Visit our Knowledge Hub</button>
+        </div>
+        <div class="learn-grid">
+          <article class="learn-card">
+            <div>
+              <h3>Emergency Fund 101: How Much Should You Really Save?</h3>
+              <p>
+                Learn how to build the perfect emergency fund for your situation. Discover expert tips on saving goals, where to keep your money, and when to use it.
+              </p>
+              <a href="#" class="learn-link"
+                >Read Article
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+            <img
+              src="{% static 'assets/featured/FeaturedHomeLeftPersonal.jpg' %}"
+              alt="Article"
+            />
+          </article>
+
+          <article class="learn-card">
+            <div>
+              <h3>
+                Credit Score Myths Debunked: 7 Things That Don't Actually Hurt Your Credit
+              </h3>
+              <p>
+                Separate fact from fiction about credit scores. Discover which common beliefs are myths and learn what really impacts your credit rating.
+              </p>
+              <a href="#" class="learn-link-link"
+                >Read Article
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+            <img
+              src="{% static 'assets/featured/Q424FeaturedHomeMiddle.jpg' %}"
+              alt="Article"
+            />
+          </article>
+
+          <article class="learn-card">
+            <div>
+              <h3>The Hidden Costs of Homeownership: What First-Time Buyers Miss</h3>
+              <p>
+                Beyond the mortgage payment: discover the unexpected costs of homeownership that catch new buyers off guard and how to budget for them.
+              </p>
+              <a href="#" class="learn-link-link"
+                >Read Article
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+            <img
+              src="{% static 'assets/featured/FeaturedHomeLeftPersonal.jpg' %}"
+              alt="Article"
+            />
+          </article>
+
+          <article class="learn-card">
+            <div>
+              <h3>Smart Money Moves in Your 30s: Building Wealth While Juggling Life</h3>
+              <p>
+                Navigate your 30s financially with confidence. Learn essential money strategies for balancing family goals, career growth, and long-term wealth building.
+              </p>
+              <a href="#" class="learn-link-link"
+                >Read Article
+                <span class="dot"
+                  ><i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </div>
+            <img
+              src="{% static 'assets/featured/Q424FeaturedHomeMiddle.jpg' %}"
+              alt="Article"
+            />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" aria-labelledby="impact-title">
+      <div class="container-md impact-inner">
+        <div class="impact-images">
+          <img
+            class="impact-img main"
+            src="{% static 'assets/featured/Q424FeaturedHomeMiddle.jpg' %}"
+            alt="Community"
+          />
+        </div>
+        <div class="impact-copy">
+          <h2 id="impact-title">Helping Your Business Stay One Step Ahead</h2>
+          <p>
+            Metro's unique high-touch approach to commercial lending has allowed us to attract experts in a number of business financial specialties. Let them show you the way
+          </p>
+          <button class="impact-cta">Learn more</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="finder" aria-labelledby="finder-title">
+      <div class="container-md">
+        <h2 id="finder-title" class="finder-title">
+          Explore the services best suited for you.
+        </h2>
+        <div class="finder-grid">
+          <a class="finder-card" href="#">
+            <div class="finder-label">Individual</div>
+            <span
+              class="finder-icon"
+              style="
+                -webkit-mask-image: url('assets/icons/FHB-Check-and-pen.svg');
+                mask-image: url('assets/icons/FHB-Check-and-pen.svg');
+              "
+            ></span>
+          </a>
+          <a class="finder-card" href="#">
+            <div class="finder-label">Business<br />Essentials</div>
+            <span
+              class="finder-icon"
+              style="
+                -webkit-mask-image: url('assets/icons/FHB-Dollar-bill.svg');
+                mask-image: url('assets/icons/FHB-Dollar-bill.svg');
+              "
+            ></span>
+          </a>
+          <a class="finder-card" href="#">
+            <div class="finder-label">Commercial<br />&amp;<br />Specialty</div>
+            <span
+              class="finder-icon"
+              style="
+                -webkit-mask-image: url('assets/icons/FHB-Handshake.svg');
+                mask-image: url('assets/icons/FHB-Handshake.svg');
+              "
+            ></span>
+          </a>
+          <a class="finder-card" href="#">
+            <div class="finder-label">Capital<br />Management</div>
+            <span
+              class="finder-icon"
+              style="
+                -webkit-mask-image: url('assets/icons/FHB-Hand-Holding-Money-Bag.svg');
+                mask-image: url('assets/icons/FHB-Hand-Holding-Money-Bag.svg');
+              "
+            ></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" aria-labelledby="footer-title">
+      <div class="container-md footer-top">
+        <div class="footer-grid-4" role="navigation" aria-label="Footer">
+          <div class="footer-brand">
+            <p>Logo here</p>
+          </div>
+          <div class="footer-col">
+            <button class="footer-accordion" aria-expanded="false">
+              About Metro Global Trust
+            </button>
+            <ul class="footer-list" hidden>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <button class="footer-accordion" aria-expanded="false">
+              Products &amp; Services
+            </button>
+            <ul class="footer-list" hidden>
+              <li><a href="#">Personal Banking</a></li>
+              <li><a href="#">Small Business Banking</a></li>
+              <li><a href="#">Commercial &amp; Specialty</a></li>
+              <li><a href="#">Wealth Management</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <button class="footer-accordion" aria-expanded="false">
+              Support
+            </button>
+            <ul class="footer-list" hidden>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Customer Service Requests</a></li>
+              <li><a href="#">Learning Center</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-aux-row">
+          <a
+            class="apps-badge-img"
+            href="#"
+            aria-label="Download our Mobile Apps"
+          >
+            <img
+              src="{% static 'assets/icons/downloadmobileapp.svg' %}"
+              alt="Download our Mobile Apps"
+            />
+          </a>
+          <div class="social-col">
+            
+          </div>
+          <div class="footer-badges" aria-label="Regulatory badges">
+            <span class="ehl-badge">Member FDIC. Equal Housing Lender</span>
+            <img
+              class="fdic-logo"
+              src="{% static 'assets/icons/memberfdic.svg' %}"
+              alt="Member FDIC"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container-md footer-links">
+        <a href="#">Fraud Prevention &amp; Security</a>
+        <a href="#">Copyright &amp; Intellectual Property</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Digital Privacy Policy</a>
+        <a href="#">Florida Privacy Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="container-md footer-legal">
+        <div class="bar">
+          <p>
+            Metro Global Trust Bank offers financial planning and trust solutions, including investment management. Wealth-related services for Metro Global Trust Bank clients are provided under the brand name Metro Global Trust Wealth Management.
+          </p>
+          <p>©2025 Metro Global Trust Bank.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const grid = document.querySelector(".featured-grid");
+        const dots = document.querySelectorAll(".featured-dots button");
+        if (!grid || !dots.length) return;
+        const cards = grid.children;
+        function updateDots() {
+          const scrollLeft = grid.scrollLeft;
+          const width = grid.clientWidth;
+          let index = Math.round(scrollLeft / width);
+          if (index < 0) index = 0;
+          if (index >= dots.length) index = dots.length - 1;
+          dots.forEach((d, i) =>
+            d.setAttribute("aria-current", i === index ? "true" : "false")
+          );
+        }
+        grid.addEventListener(
+          "scroll",
+          () => {
+            window.requestAnimationFrame(updateDots);
+          },
+          { passive: true }
+        );
+        dots.forEach((d, i) =>
+          d.addEventListener("click", () => {
+            grid.scrollTo({ left: i * grid.clientWidth, behavior: "smooth" });
+          })
+        );
+        updateDots();
+      })();
+
+      // Header navigation: mega menus (desktop) and mobile drawer
+      (function () {
+        const header = document.querySelector(".site-header");
+        const root = document.documentElement;
+        const links = document.querySelectorAll(".mainnav .nav-link");
+        const megas = {
+          personal: document.getElementById("mega-personal"),
+          business: document.getElementById("mega-business"),
+          commercial: document.getElementById("mega-commercial"),
+          wealth: document.getElementById("mega-wealth"),
+        };
+        const megaLayer = document.getElementById("megaLayer");
+        const dim = megaLayer ? megaLayer.querySelector(".mega-dim") : null;
+        const tabs = megaLayer ? megaLayer.querySelectorAll(".mega-tab") : [];
+
+        const isDesktop = () => window.matchMedia("(min-width: 993px)").matches;
+        let openKey = null;
+
+        function setHeaderHeight() {
+          if (header) {
+            root.style.setProperty(
+              "--header-height",
+              header.offsetHeight + "px"
+            );
+          }
+        }
+
+        const mainbar = document.querySelector(".mainbar");
+        const brandEl = document.querySelector(".brand");
+        function computeMegaGeometry() {
+          if (!isDesktop() || !mainbar || !brandEl) {
+            root.style.removeProperty("--mega-panel-left");
+            root.style.removeProperty("--mega-panel-width");
+            return;
+          }
+          const barRect = mainbar.getBoundingClientRect();
+          const brandRect = brandEl.getBoundingClientRect();
+          const containerLeft = Math.max(0, Math.round(barRect.left));
+          const rawWidth = Math.round(brandRect.left - barRect.left - 16); // gap before logo
+          const width = Math.max(460, Math.min(760, rawWidth));
+          root.style.setProperty("--mega-panel-left", containerLeft + "px");
+          root.style.setProperty("--mega-panel-width", width + "px");
+        }
+
+        function layoutUpdate() {
+          setHeaderHeight();
+          computeMegaGeometry();
+        }
+        layoutUpdate();
+        window.addEventListener("resize", layoutUpdate, { passive: true });
+
+        function hideAllPanels() {
+          Object.values(megas).forEach(
+            (m) => m && m.setAttribute("hidden", "")
+          );
+          links.forEach((l) => l.setAttribute("aria-expanded", "false"));
+          tabs.forEach((t) => t.setAttribute("aria-selected", "false"));
+        }
+
+        function showLayer() {
+          if (!megaLayer || !isDesktop()) return;
+          megaLayer.removeAttribute("hidden");
+          document.body.classList.add("no-scroll");
+        }
+        function hideLayer() {
+          if (!megaLayer) return;
+          megaLayer.setAttribute("hidden", "");
+          document.body.classList.remove("no-scroll");
+        }
+
+        function openMega(key) {
+          if (!isDesktop()) return;
+          computeMegaGeometry();
+          showLayer();
+          hideAllPanels();
+          const panel = megas[key];
+          if (panel) panel.removeAttribute("hidden");
+          openKey = key;
+          const btn = Array.from(links).find((l) => l.dataset.mega === key);
+          if (btn) btn.setAttribute("aria-expanded", "true");
+          const tab = Array.from(tabs).find((t) => t.dataset.mega === key);
+          if (tab) tab.setAttribute("aria-selected", "true");
+        }
+
+        function closeMega() {
+          hideAllPanels();
+          hideLayer();
+          openKey = null;
+        }
+
+        // Header nav triggers
+        links.forEach((l) => {
+          l.addEventListener("mouseenter", () => openMega(l.dataset.mega));
+          l.addEventListener("focus", () => openMega(l.dataset.mega));
+          l.addEventListener("click", () => openMega(l.dataset.mega));
+        });
+
+        // Tabs inside overlay
+        tabs.forEach((t) => {
+          t.addEventListener("click", () => openMega(t.dataset.mega));
+          t.addEventListener("mouseenter", () => openMega(t.dataset.mega));
+        });
+
+        // Dismiss overlay
+        if (dim) dim.addEventListener("click", closeMega);
+        document.addEventListener("click", (e) => {
+          if (!megaLayer || megaLayer.hasAttribute("hidden")) return;
+          const insideLayer = megaLayer.contains(e.target);
+          const onTrigger = Array.from(links).some((l) => l.contains(e.target));
+          if (!insideLayer && !onTrigger) closeMega();
+        });
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMega();
+        });
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (isDesktop()) closeMega();
+          },
+          { passive: true }
+        );
+        window.addEventListener(
+          "resize",
+          () => {
+            if (!isDesktop()) closeMega();
+          },
+          { passive: true }
+        );
+
+        // Mobile drawer
+        const drawer = document.getElementById("mobileNav");
+        const hamburger = document.querySelector(".hamburger");
+        const overlay = drawer ? drawer.querySelector(".drawer-overlay") : null;
+        const closeBtn = drawer ? drawer.querySelector(".drawer-close") : null;
+        const accordions = drawer
+          ? drawer.querySelectorAll(".drawer-accordion")
+          : [];
+        function openDrawer() {
+          if (!drawer) return;
+          drawer.classList.add("open");
+          drawer.removeAttribute("hidden");
+          if (hamburger) hamburger.setAttribute("aria-expanded", "true");
+          document.body.classList.add("no-scroll");
+          closeMega();
+        }
+        function closeDrawer() {
+          if (!drawer) return;
+          drawer.classList.remove("open");
+          drawer.setAttribute("hidden", "");
+          if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("no-scroll");
+        }
+        if (hamburger) hamburger.addEventListener("click", openDrawer);
+        if (overlay) overlay.addEventListener("click", closeDrawer);
+        if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
+        accordions.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const expanded = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!expanded));
+            const list = btn.nextElementSibling;
+            if (list) list.hidden = expanded;
+          });
+        });
+      })();
+
+      // Dream slider (quotes + images)
+      (function () {
+        const prevBtn = document.querySelector(
+          ".dream-nav .btn.btn-bank-outline"
+        );
+        const nextBtn = document.querySelector(
+          ".dream-nav .btn.btn-bank-primary"
+        );
+        const visual = document.querySelector(".dream-visual");
+        if (!visual || !prevBtn || !nextBtn) return;
+
+        const track = document.getElementById("dreamImagesTrack");
+        const titleEl = document.getElementById("dream-title");
+
+        // Slides data
+        const slidesData = [
+          {
+            img: "assets/testimonials/HmpgBrandImage.jpg",
+            quote:
+              "Because big bank resources should be guided by deep relationships and personalized service.",
+          },
+          {
+            img: "assets/testimonials/Mack-Wilbourn.png",
+            quote:
+              "It’s a new chapter, and I want to do things that I’m passionate about for my community.",
+          },
+          {
+            img: "assets/testimonials/HmpgBrandImage.jpg",
+            quote:
+              "Because big bank resources should be guided by deep relationships and personalized service.",
+          },
+          {
+            img: "assets/testimonials/Mack-Wilbourn.png",
+            quote:
+              "It’s a new chapter, and I want to do things that I’m passionate about for my community.",
+          },
+        ];
+
+        track.innerHTML = "";
+        const createImg = (src, alt = "") => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = alt;
+          return img;
+        };
+
+        track.appendChild(createImg(slidesData[slidesData.length - 1].img));
+        slidesData.forEach((slide) => {
+          track.appendChild(createImg(slide.img));
+        });
+        track.appendChild(createImg(slidesData[0].img));
+
+        let currentIndex = 1;
+        let isAnimating = false;
+
+        const getSlideWidth = () => {
+          const firstImg = track.querySelector("img");
+          if (!firstImg) return 0;
+          const computedStyle = getComputedStyle(firstImg);
+          const imgWidth = firstImg.offsetWidth;
+          const gap = parseInt(getComputedStyle(track).gap) || 16;
+          return imgWidth + gap;
+        };
+
+        const setPosition = (index, withTransition = true) => {
+          const slideWidth = getSlideWidth();
+          track.style.transition = withTransition
+            ? "transform 0.6s ease"
+            : "none";
+          track.style.transform = `translateX(${-index * slideWidth}px)`;
+        };
+
+        const init = () => {
+          setPosition(currentIndex, false);
+          updateQuote();
+        };
+
+        const updateQuote = () => {
+          const realIndex =
+            (((currentIndex - 1) % slidesData.length) + slidesData.length) %
+            slidesData.length;
+          if (titleEl) {
+            titleEl.textContent = slidesData[realIndex].quote;
+          }
+        };
+
+        const slide = (direction) => {
+          if (isAnimating) return;
+
+          isAnimating = true;
+          currentIndex += direction === "next" ? 1 : -1;
+          setPosition(currentIndex, true);
+        };
+
+        track.addEventListener("transitionend", () => {
+          const totalSlides = slidesData.length;
+
+          if (currentIndex === 0) {
+            track.style.transition = "none";
+            currentIndex = totalSlides;
+            track.style.transform = `translateX(${
+              -currentIndex * getSlideWidth()
+            }px)`;
+            track.offsetHeight;
+            track.style.transition = "transform 0.6s ease";
+          } else if (currentIndex === totalSlides + 1) {
+            track.style.transition = "none";
+            currentIndex = 1;
+            track.style.transform = `translateX(${
+              -currentIndex * getSlideWidth()
+            }px)`;
+            track.offsetHeight;
+            track.style.transition = "transform 0.6s ease";
+          }
+
+          updateQuote();
+          isAnimating = false;
+        });
+
+        prevBtn.addEventListener("click", () => slide("prev"));
+        nextBtn.addEventListener("click", () => slide("next"));
+
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            setPosition(currentIndex, false);
+          }, 100);
+        });
+
+        const images = track.querySelectorAll("img");
+        let loadedImages = 0;
+
+        const checkAllImagesLoaded = () => {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            setTimeout(init, 50);
+          }
+        };
+
+        images.forEach((img) => {
+          if (img.complete) {
+            checkAllImagesLoaded();
+          } else {
+            img.addEventListener("load", checkAllImagesLoaded);
+            img.addEventListener("error", checkAllImagesLoaded);
+          }
+        });
+      })();
+
+      // Footer accordions (mobile)
+      (function () {
+        const accordions = document.querySelectorAll(".footer-accordion");
+        if (!accordions.length) return;
+        const mq = window.matchMedia("(max-width: 992px)");
+
+        const apply = () => {
+          if (mq.matches) {
+            accordions.forEach((btn, idx) => {
+              const panel = btn.nextElementSibling;
+              if (!panel) return;
+              if (!btn.dataset._initialized) {
+                btn.setAttribute("aria-expanded", "false");
+                btn.dataset._initialized = "1";
+              }
+              const expanded = btn.getAttribute("aria-expanded") === "true";
+              panel.hidden = !expanded;
+            });
+          } else {
+            // Desktop: always expanded
+            accordions.forEach((btn) => {
+              const panel = btn.nextElementSibling;
+              if (panel) panel.hidden = false;
+              btn.setAttribute("aria-expanded", "true");
+            });
+          }
+        };
+
+        accordions.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            if (!mq.matches) return;
+            const expanded = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!expanded));
+            const panel = btn.nextElementSibling;
+            if (panel) panel.hidden = expanded;
+          });
+        });
+
+        apply();
+        if (mq.addEventListener) mq.addEventListener("change", apply);
+        else mq.addListener(apply);
+      })();
+
+      // Scroll-to / focus helpers for header actions
+      (function () {
+        const safeQuery = (sel) => document.querySelector(sel);
+
+        function makeFocusable(el) {
+          if (!el) return el;
+          if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
+          return el;
+        }
+
+        function scrollToAndFocus(targetSelector, focusSelector, opts = {}) {
+          const target = safeQuery(targetSelector);
+          if (!target) return;
+
+          const focusEl = focusSelector ? safeQuery(focusSelector) : target;
+
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          setTimeout(() => {
+            if (focusEl) {
+              makeFocusable(focusEl).focus();
+            } else {
+              const first = target.querySelector(
+                "input,button,a,select,textarea,[tabindex]:not([tabindex='-1'])"
+              );
+              if (first) makeFocusable(first).focus();
+              else makeFocusable(target).focus();
+            }
+          }, opts.delay || 350);
+        }
+
+        // Login triggers (header + drawer)
+        const headerLogin = safeQuery(".header-login");
+        const drawerLogin = safeQuery(".drawer-login");
+
+        function onLoginClick(e) {
+          const mobileNav = document.getElementById("mobileNav");
+          if (mobileNav && mobileNav.classList.contains("open")) {
+            mobileNav.classList.remove("open");
+            mobileNav.setAttribute("hidden", "");
+            const hamburger = document.querySelector(".hamburger");
+            if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("no-scroll");
+          }
+
+          const trigger = e && e.currentTarget;
+          if (
+            trigger &&
+            trigger.tagName &&
+            trigger.tagName.toLowerCase() === "a"
+          ) {
+            const href = trigger.getAttribute("href") || "";
+            if (href.startsWith("#")) return; // native anchor handles it
+          }
+
+          if (e && typeof e.preventDefault === "function") e.preventDefault();
+          scrollToAndFocus(".login-panel", "#userId", { delay: 450 });
+        }
+
+        if (headerLogin) headerLogin.addEventListener("click", onLoginClick);
+        if (drawerLogin) drawerLogin.addEventListener("click", onLoginClick);
+      })();
+    </script>
+  </body>
+</html>

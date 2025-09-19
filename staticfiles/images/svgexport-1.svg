@@ -1,0 +1,9 @@
+<svg width='21.025'  height='16.003' ><defs><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.025 16.003">
+        <g data-name="Group 427" transform="translate(-10 -13)">
+            <rect data-name="Rectangle 185" width="21.025" height="2.549" rx="1.274" transform="translate(10 13)"></rect>
+            <rect data-name="Rectangle 186" width="21.025" height="2.549" rx="1.274" transform="translate(10 19.727)"></rect>
+            <rect data-name="Rectangle 187" width="21.025" height="2.549" rx="1.274" transform="translate(10 26.454)"></rect>
+        </g>
+    </svg></defs>
+				<use xlink:href="#menu" fill="#FFFFFF"></use>
+			</svg>

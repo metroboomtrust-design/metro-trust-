@@ -1,0 +1,238 @@
+.cards-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: var(--spacing-xl);
+  height: 100%;
+}
+
+.card {
+  background: var(--credit-card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.card-logo {
+  height: 24px;
+}
+
+.card-balance {
+  margin-bottom: var(--spacing-xl);
+}
+
+.card-balance h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-balance p {
+  color: var(--text-secondary);
+}
+
+.card-dots {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  opacity: 0.3;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.action-btn {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: transform 0.2s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.action-btn.withdraw {
+  background-color: var(--accent-orange);
+}
+
+.action-btn.invite {
+  background-color: var(--accent-teal);
+}
+
+.action-btn.sell {
+  background-color: var(--accent-purple);
+}
+
+.add-card-btn {
+  width: 100%;
+  padding: var(--spacing-lg);
+  border: 2px dashed var(--text-secondary);
+  border-radius: var(--radius-lg);
+  background: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  transition: all 0.2s;
+}
+
+.add-card-btn:hover {
+  border-color: var(--primary-dark);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.quick-transfer {
+  margin-top: var(--spacing-xl);
+}
+
+.quick-transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+.transfer-avatars {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.transfer-avatars .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-gradient-start);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.transfer-avatars .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-more {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-gradient-start);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-number-input label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--text-primary);
+  padding: var(--spacing-sm) 0;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+/* Existing card styles remain the same */
+
+@media (max-width: 1024px) {
+  .cards-section {
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+  }
+
+  .card-actions {
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    min-width: calc(50% - var(--spacing-md));
+  }
+}
+
+@media (max-width: 768px) {
+  .card-balance h3 {
+    font-size: 1.5rem;
+  }
+
+  .action-btn {
+    min-width: 100%;
+  }
+
+  .quick-transfer .transfer-avatars {
+    overflow-x: auto;
+    padding-bottom: var(--spacing-sm);
+  }
+}

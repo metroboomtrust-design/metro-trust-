@@ -1,0 +1,288 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nextrust Equity Bank</title>
+    <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/card.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/transactions.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/affiliate.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/components/contact-support.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/nexus_logo.png' %}" type="image/x-icon">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+  </head>
+  <body>
+    
+          
+
+          <style>
+            :root {
+                --vh: 1vh;
+            }
+            
+            body {
+                font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                overflow: hidden;
+            }
+            
+            .mobile-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                background-color: #f8f9fa;
+            }
+            
+            .main-content {
+                flex: 1;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 20px;
+            }
+            
+            .receipt-container {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            
+            .receipt-card {
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            
+            .receipt-header {
+                background: linear-gradient(135deg, #446291, #002257);
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .receipt-status-badge {
+                background: #446291;
+                padding: 5px 15px;
+                border-radius: 20px;
+                display: inline-block;
+                margin-top: 10px;
+                font-size: 14px;
+            }
+            
+            .receipt-body {
+                padding: 20px;
+            }
+            
+            .receipt-row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+            
+            .receipt-label {
+                color: #666;
+                font-weight: 500;
+            }
+            
+            .receipt-value {
+                font-weight: 600;
+                text-align: right;
+            }
+            
+            .receipt-divider {
+                height: 1px;
+                background: #eee;
+                margin: 20px 0;
+            }
+            
+            .receipt-section-title {
+                color: #000000;
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+            
+            .receipt-footer {
+                padding: 15px;
+                background: #f9f9f9;
+                font-size: 12px;
+                color: #666;
+                border-top: 1px solid #eee;
+            }
+            
+            .btn-container {
+                display: flex;
+                gap: 10px;
+                padding: 20px;
+                background: white;
+                border-top: 1px solid #eee;
+            }
+            
+            @media (max-width: 576px) {
+                .btn-container {
+                    flex-direction: column;
+                }
+                .btn {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mobile-container">
+            <div class="main-content">
+                <div class="receipt-container">
+                    <p class="text-muted text-center mb-4">{{ transfer_message }}</p>
+                    
+                    <div class="progress mb-4">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                            role="progressbar" 
+                            style="width: {{ progress }}%;" 
+                            aria-valuenow="{{ progress }}" 
+                            aria-valuemin="0" 
+                            aria-valuemax="100">
+                            {{ progress }}%
+                    
+
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-card">
+                        <div class="receipt-header">
+                            <h4>Transaction Receipt</h4>
+                            <div class="receipt-status-badge">
+                                {{ transaction.transaction_type }}
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-body">
+                            <div class="receipt-row">
+                                <span class="receipt-label">Transaction ID</span>
+                                <span class="receipt-value">#{{ transaction.id }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Date</span>
+                                <span class="receipt-value">{{ transaction.transaction_date}}</span>
+                            </div>
+                            
+                            <div class="receipt-divider"></div>
+                            
+                            <div class="receipt-section-title">Transfer Details</div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Amount</span>
+                                <span class="receipt-value">${{ transaction.amount_to_transfer }}</span>
+                            </div>
+                            
+                            <div class="receipt-divider"></div>
+                            
+                            <div class="receipt-section-title">Recipient Details</div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Beneficiary Name</span>
+                                <span class="receipt-value">{{ transaction.beneficiary_name }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Bank Name</span>
+                                <span class="receipt-value">{{ transaction.bank_name }}</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Account Number</span>
+                                <span class="receipt-value">{{ transaction.account_number }}</span>
+                            </div>
+                            
+                            <div class="receipt-divider"></div>
+                            
+                            <div class="receipt-row">
+                                <span class="receipt-label">Reference</span>
+                                <span class="receipt-value">{{ transaction.reference|default:"N/A" }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-footer">
+                            <small>DISCLAIMER: Your transaction has been successfully processed. Note, however, that completion of any transfer may be affected by other factors including but not limited to transmission errors, incomplete information, fluctuations on the network/internet, interruptions, glitch, delayed information or other matters beyond the Bank's control which may impact on the transaction and for which the Bank will not be liable. All transactions are subject to Metro Global Trust Bank confirmation and fraud proof verification.</small>
+                            <p class="mt-2"><small class="text-muted">Thank you for banking with us</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <a href="{% url 'portfolio' %}" class="btn btn-secondary">Go to Dashboard</a>
+                <a href="{% url 'download_receipt' transaction.id %}" class="btn btn-primary">Download Receipt</a>
+            </div>
+        </div>
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+      </main>
+    </div>
+
+    
+  </body>
+  <!-- Chatra {literal} -->
+<script>
+  (function(d, w, c) {
+      w.ChatraID = '3FEJLoG5duPww7YTf';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+          (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+  })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% comment %} <script>
+  function refreshProgress() {
+      fetch(window.location.href)  // Fetch updated progress
+          .then(response => response.text())
+          .then(html => {
+              document.open();
+              document.write(html);
+              document.close();
+          });
+  }
+
+  setInterval(refreshProgress, 5000);  // Refresh every 5 seconds
+</script> {% endcomment %}
+
+
+
+</html>
+
+   
+   
+   
+   
+   
+   
+   
+    
+
+

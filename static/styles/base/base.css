@@ -1,0 +1,60 @@
+/* Base resets and element styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  overflow-x: hidden;
+}
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  scroll-margin-block: start;
+}
+
+body.is-dashboard {
+  background: var(--color-bg-light);
+  padding-left: 4.75rem;
+  padding-bottom: 5rem;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.content {
+  margin-right: var(--sidebar-w);
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-right: 0;
+  }
+
+  body.is-dashboard {
+    padding-left: 0;
+    padding-bottom: 6rem;
+  }
+}

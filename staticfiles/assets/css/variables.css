@@ -1,0 +1,59 @@
+:root {
+  --font-size-sm: 0.875rem; /* Matches 14px */
+  --font-size-md: 1rem; /* Matches 16px */
+  --font-size-lg: 1.5rem; /* Matches 24px */
+  --chart-size: 240px; /* Default size for donut charts */
+
+  /* Colors */
+  --primary-dark: #2a2b3c;
+  --primary-light: #f8fafc;
+  --accent-orange: #ff7043;
+  --accent-teal: #26a69a;
+  --accent-purple: #7e57c2;
+  --success-green: #4caf50;
+  --error-red: #ff5252;
+
+  /* Text Colors */
+  --text-primary: #2a2b3c;
+  --text-secondary: #6b7280;
+  --text-white: #ffffff;
+
+  /* Background Colors */
+  --bg-gradient-start: #e0f2f1;
+  --bg-gradient-end: #b2ebf2;
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --credit-card-bg: rgba(255, 255, 255, 0.2);
+  --dashboard-bg: rgba(255, 255, 255, 0.4);
+
+  /* Chart Colors */
+  --chart-level-1: #26a69a;
+  --chart-level-2: #ff7043;
+  --chart-level-3: #7e57c2;
+  --chart-level-4: #66bb6a;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 1.5rem;
+    --spacing-lg: 1rem;
+    --spacing-md: 0.75rem;
+  }
+}

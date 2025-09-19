@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.b-g{
+    background-color: #003087;
+}
+.mxx{
+  margin-top: 100px;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .cent1{
+    font-size: 1.2rem;
+  }
+  .cent1:hover{
+    border-bottom: 2px solid white;
+  }
+
+  /* Center list items */
+  .navbar-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cent2{
+    font-size: 1.1rem;
+  }
+  .cent2:hover{
+    border-bottom: 3px solid blue;
+  }
+
+  /* Sidebar (offcanvas) only visible on large screens */
+ 
+ /* Sidebar styling */
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide the sidebar by default */
+    background-color: #f8f9fa;
+    transition: 0.3s;
+    padding-top: 60px;
+  }
+ 
+.navbar-toggler{
+    height: 30px;
+    font-size: 0.8rem;
+    background-color: white;
+}
+  /* Sidebar when open */
+  #sidebar.open {
+    left: 0;
+  }
+
+  /* Close button in the sidebar */
+  #sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+.img1{
+    border-radius: 50%;
+}
+.accountNumber{
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #003087;
+}
+.accountName{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 10px;
+    background-color: darkgray;
+    color: white;
+    font-weight: 500;
+}
+.eaZyLinks{
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: 0.2s ease-in-out
+}
+.grid1 div{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid1 div:hover {
+    transform: translateY(-10px); 
+}
+.grid1 img{
+    width: 50px;
+    height: 50px;
+}
+.grid1 p{
+    color: black;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px 0;
+}
+.gridBod{
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+}
+
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    bottom: 0;
+    padding: 15px;
+}
+.grid2 div{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid2 div:hover {
+    transform: translateY(-10px); 
+}
+.grid2 img{
+    width: 30px;
+    height: 50px;
+}
+.grid2 p{
+    color: black;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 5px 0;
+}
+button.xxl{
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+.transaction-card {
+    border-left: 5px solid #003087
+    ;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.transaction-date {
+    font-weight: bold;
+}
+.transaction-amount {
+    font-weight: bold;
+    color: black;
+    float: right;
+}
+.transaction-details {
+    font-size: 14px;
+    color: gray;
+}
+.receipt-link {
+    color: gray;
+    cursor: pointer;
+}
+.profile-card {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  .profile-info {
+    font-size: 16px;
+  }

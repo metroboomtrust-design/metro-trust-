@@ -1,0 +1,102 @@
+/* Hero section */
+.hero {
+  background-image: url("../../assets/Muscle and Hustle Homepage Hero.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 4rem 0 5rem;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  width: 100%;
+}
+.hero-content {
+  max-width: 650px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid var(--color-primary);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transform: rotate(90deg);
+}
+.hero-title {
+  color: var(--color-text-primary);
+  font-size: clamp(2rem, 4vw, 3.125rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+.hero-subtitle {
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    padding: 4rem 0 18rem;
+    background-position: center;
+    margin-bottom: 10rem;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .login-holder {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10rem;
+    z-index: 2;
+  }
+  .login-panel {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero {
+    padding: 2rem 0 4rem;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .login-holder {
+    position: static;
+    margin-top: 1.25rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .hero-inner {
+    min-height: 100%;
+  }
+  .hero {
+    min-height: var(--hero-min-h-desktop);
+  }
+  .hero-content {
+    max-width: 580px;
+  }
+  .login-holder {
+    align-self: end;
+    width: 100%;
+  }
+  .login-panel {
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+  }
+}

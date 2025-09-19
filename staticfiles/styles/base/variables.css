@@ -1,0 +1,73 @@
+/* Design tokens and CSS custom properties */
+:root {
+  /* ========== BRAND COLORS ========== */
+  /* Primary Blues */
+  --color-primary: #0050b5; /* Main brand blue */
+  --color-primary-variant: #0050bd; /* Slight variant for interactions */
+  --color-primary-dark: #002257; /* Dark blue for text/headers */
+  --color-primary-darker: #00043a; /* Darkest blue for emphasis */
+  --color-primary-medium: var(
+    --color-primary-dark
+  ); /* Deprecated: alias to dark */
+
+  /* Brand Accent */
+  --color-accent-red: #d83b2d; /* Original bank red */
+
+  /* ========== BACKGROUND COLORS ========== */
+  /* Light Backgrounds */
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f6f7fb; /* Main light background */
+  --color-bg-light-alt: #f3f5f7; /* Alternative light background */
+  --color-bg-light-warm: #f0f2f7; /* Warm light background for hovers */
+
+  /* Dark Backgrounds */
+  --color-bg-dark: #00043a; /* Main dark sections */
+  --color-bg-dark-blue: #042553; /* Impact section background */
+  --color-bg-footer: #07163a; /* Footer background */
+
+  /* ========== TEXT COLORS ========== */
+  /* Dark Text */
+  --color-text-primary: #00043a; /* Main text color */
+  --color-text-secondary: #002257; /* Secondary text */
+  --color-text-medium: #002a5f; /* Medium emphasis text */
+  --color-text-muted: #4a5970; /* Muted text */
+  --color-text-subtle: #5b6b8d; /* Subtle text */
+
+  /* Light Text */
+  --color-text-light: #d8e0ef; /* Light text on dark backgrounds */
+  --color-text-light-alt: #d8dbe8; /* Alternative light text */
+  --color-text-white: #ffffff;
+
+  /* ========== BORDER & DIVIDER COLORS ========== */
+  --color-border-light: #e6eaf2; /* Main light borders */
+  --color-border-light-alt: #dde3ef; /* Alternative light borders */
+  --color-border-gray: #dee2e6; /* Form borders */
+  --color-border-muted: #adb5bd; /* Muted borders */
+
+  /* ========== UTILITY COLORS ========== */
+  --color-placeholder: #cfd8ea; /* Placeholder/loading backgrounds */
+
+  /* ========== TRANSPARENCY/OVERLAY COLORS ========== */
+  --color-overlay-dark: rgba(0, 0, 0, 0.45); /* Dark overlays */
+  --color-overlay-light: rgba(255, 255, 255, 0.9); /* Light overlays */
+  --color-border-transparent-light: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Transparent borders on dark */
+  --color-border-transparent-medium: rgba(255, 255, 255, 0.2);
+  --color-border-transparent-strong: rgba(255, 255, 255, 0.25);
+  --color-border-transparent-xstrong: rgba(255, 255, 255, 0.4);
+  --color-border-dark-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-sans: "Graphik Web", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Layout */
+  --container-gutter-mobile: 1rem;
+  --container-gutter-tablet: 2rem;
+  --hero-min-h-desktop: 44rem;
+}

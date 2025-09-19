@@ -1,0 +1,74 @@
+/* Help section (How can we help you?) */
+.help {
+  padding: 2rem 0;
+  background: var(--color-bg-white);
+}
+.help .help-title {
+  text-align: center;
+  color: var(--color-text-primary);
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.help-card {
+  text-align: center;
+}
+.help-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.icon-mask {
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-text-white);
+}
+.icon-mask {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+.help-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+.help-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1199px) {
+  .help-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .help-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.75rem;
+  }
+  .help-circle {
+    width: 120px;
+    height: 120px;
+  }
+  .help .help-title {
+    font-size: 2rem;
+  }
+}

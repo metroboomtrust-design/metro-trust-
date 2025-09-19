@@ -1,0 +1,170 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contain1{
+    align-items: center;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0px 74.5px;
+	max-width: 1200px;
+	min-height: 66px;
+	overflow: hidden;
+	padding: 0px 20px;
+	position: relative;
+}
+.contain2{
+    height: 120vh;
+    background-color: #F2F2F5;
+    padding: 100px 150px;
+}
+.first{
+    width: 50%;
+}
+.second{
+    width: 50%;
+}
+.img1{
+    background-image: url(../images/elan-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 400px;
+}
+.imgtext h1{
+    width: 500px;
+}
+.flex1{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    
+}
+.contain3{
+    background-color: #FFFFFF;
+	border-radius: 8px;
+	box-shadow: #0000004D 0px 2.4px 5.6px 0px;
+	clear: both;
+	margin: 0px 76px;
+	min-width: 448px;
+	overflow: hidden;
+	padding: 32px;
+	position: relative;
+}
+button.btn1{
+    color: white;
+	margin: 32px 0px 16px;
+	padding: 10px 24px;
+    background-color: #0c2074;
+    
+}
+.col1{
+    color: #2c76af;
+}
+.footerbg{
+    background-color: #0c2074;
+    padding: 20px 100px;
+}
+.hb1{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+.hb{
+    height: 2px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.bbb{
+    font-size: 0.9rem;
+}
+.show{
+    display: none;
+}
+@media only screen and (max-width: 1024px){
+.contain1{
+    text-align: center;
+    background-color: white;
+    display: block;
+    padding: 0px;
+       
+    }
+.flex1{
+    display: block;
+    justify-content: space-between;
+    column-gap: 0px;
+        
+    }    
+.flex1 h1{
+    text-align: center;
+    }
+.first{
+    width: 100%;
+   }
+.second{
+    width: 100%;
+   }
+.contain2{
+    height: 130vh;
+    background-color: #F2F2F5;
+    padding: 20px 150px;
+}
+.contain3{
+    background-color: #FFFFFF;
+	border-radius: 8px;
+	margin: 100px 0px;
+	min-width: 448px;
+	padding: 0px;
+	position: relative;
+}
+.hb1{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+} 
+.img1{
+    background-image: url(../images/elan-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 530px;
+    height: 300px;
+}
+.grib{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+}
+@media only screen and (max-width: 768px){
+.first {
+    display: none;
+ }
+.second{
+    margin: 0;
+ }  
+.contain2{
+    display: none;
+ } 
+.show{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100px;
+        
+ }
+.hb1{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+} 
+}

@@ -1,0 +1,5 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="contact-logo" title="email" width="24"  height="17.41" ><defs><symbol id="email" viewBox="0 0 24 17.41">
+        <path d="M0.93,3.3H23.08a0.89,0.89,0,0,1,.92.86v15.7a0.89,0.89,0,0,1-.92.86H0.93A0.89,0.89,0,0,1,0,19.85V4.15A0.89,0.89,0,0,1,.93,3.3h0ZM22.16,5.76h0l-9.76,9.07a0.6,0.6,0,0,1-.78,0L1.85,5.76V19H22.16V5.76h0ZM21.39,5H2.61L12,13.74,21.39,5h0Z" transform="translate(0 -3.3)"></path>
+    </symbol></defs>
+                                    <use xlink:href="#email" fill="#6C7788"></use>
+                                </svg>

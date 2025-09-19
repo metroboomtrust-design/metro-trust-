@@ -1,0 +1,76 @@
+/* Impact banner */
+.impact {
+  background: var(--color-bg-dark-blue);
+  color: var(--color-text-white);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+.impact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 1440px;
+}
+.impact-copy {
+  padding: 2rem;
+  max-width: 640px;
+}
+.impact-copy h2 {
+  max-width: 22ch;
+}
+.impact-copy h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+.impact-copy p {
+  color: var(--color-text-light);
+  max-width: 46ch;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+.impact-cta {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border: 0;
+  padding: 0.9rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.impact-images {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+}
+.impact-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .impact-inner {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+  }
+  .impact-images {
+    display: none;
+    order: -1;
+    height: 220px;
+  }
+  .impact-img {
+    height: 100%;
+  }
+}

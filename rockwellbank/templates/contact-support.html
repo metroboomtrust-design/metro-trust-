@@ -1,0 +1,580 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deposit Checks - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles/base/variables.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/base/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/side-bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/bottom-nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/layout/deposit.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/metro_bank_logo.png' %}" type="image/x-icon">
+  </head>
+  <body class="is-dashboard">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <a class="brand-mark" href="{% url 'portfolio' %}" aria-label="Home">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <rect
+                x="2"
+                y="2"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".9"
+              />
+              <rect
+                x="13"
+                y="2"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".65"
+              />
+              <rect
+                x="2"
+                y="13"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".65"
+              />
+              <rect
+                x="13"
+                y="13"
+                width="9"
+                height="9"
+                rx="2"
+                fill="white"
+                opacity=".4"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="spacer"></div>
+
+        <nav class="nav">
+          <div class="nav-item">
+            <a class="nav-btn active" href="{% url 'portfolio' %}" aria-label="Dashboard">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="8" height="8" rx="2"></rect>
+                  <rect x="13" y="3" width="8" height="12" rx="2"></rect>
+                  <rect x="3" y="13" width="8" height="8" rx="2"></rect>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'transfer' %}" aria-label="Transfer">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h13l-3-3"></path>
+                  <path d="M17 17H4l3 3"></path>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Transfer</span>
+          </div>
+
+           <div class="nav-item">
+            <a class="nav-btn" href=" {% url 'contactus' %}" aria-label="Deposit">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                  <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                  <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Deposit</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'mycards' %}" aria-label="Stocks">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Stocks</span>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-btn" href="{% url 'profile' %}" aria-label="Profile">
+              <span class="icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+            </a>
+            <span class="tooltip">Profile</span>
+          </div>
+        </nav>
+
+        <div class="spacer"></div>
+
+        <div class="nav-item">
+          <a class="nav-btn danger" href="{% url 'logout' %}" aria-label="Log out">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M15 3h-5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h5"></path>
+                <path d="M10 12h11"></path>
+                <path d="M18 9l3 3-3 3"></path>
+              </svg>
+            </span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </div>
+      </aside>
+
+      <main class="container content" tabindex="-1">
+        <header class="toolbar">
+          <div class="title">
+            <h1>Deposit Checks</h1>
+            <p class="muted">
+              Deposit checks instantly by taking photos of the front and back.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn btn-bank-primary btn-sm" type="button">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+                />
+                <path d="M12 8v8" />
+                <path d="M8 12h8" />
+              </svg>
+              <span>Deposit History</span>
+            </button>
+          </div>
+        </header>
+
+        <form class="deposit-form">
+          <!-- Section 1: Deposit Information & Confirmation -->
+          <div class="form-section">
+            <h2>Deposit Information</h2>
+            <div class="section-content">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="account-type">Deposit To Account</label>
+                  <select id="account-type" name="account-type" required>
+                    <option value="">Select Account</option>
+                    <option value="checking">Checking Account (...4321)</option>
+                    <option value="savings">Savings Account (...5678)</option>
+                    <option value="business">Business Account (...9012)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="check-amount">Check Amount ($)</label>
+                  <input
+                    type="number"
+                    id="check-amount"
+                    name="check-amount"
+                    step="0.01"
+                    min="0"
+                    placeholder="0.00"
+                    required
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="description">Description (Optional)</label>
+                  <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    placeholder="e.g., Paycheck, Tax Refund, etc."
+                  />
+                </div>
+              </div>
+
+              <!-- Confirmation details integrated -->
+              <div class="confirmation-section">
+                <h3>Deposit Summary</h3>
+                <div class="confirmation-details">
+                  <div class="confirmation-item">
+                    <span class="label">Account:</span>
+                    <span class="value" id="confirm-account">-</span>
+                  </div>
+                  <div class="confirmation-item">
+                    <span class="label">Amount:</span>
+                    <span class="value" id="confirm-amount">$0.00</span>
+                  </div>
+                  <div class="confirmation-item">
+                    <span class="label">Processing Time:</span>
+                    <span class="value">1-2 business days</span>
+                  </div>
+                </div>
+                <div class="deposit-agreement">
+                  <label class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="agreement"
+                      name="agreement"
+                      required
+                    />
+                    <span class="checkmark"></span>
+                    <span class="agreement-text">
+                      I certify that this check has not been deposited elsewhere
+                      and I agree to the
+                      <a href="#" class="link"
+                        >Mobile Deposit Terms and Conditions</a
+                      >.
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Check Images -->
+          <div class="form-section">
+            <h2>Check Images</h2>
+            <div class="section-content">
+              <p class="section-description">
+                Take clear photos of both sides of your check. Ensure all four
+                corners are visible and the image is not blurry.
+              </p>
+              <div class="image-upload-grid">
+                <div class="image-upload-container">
+                  <h3>Front of Check</h3>
+                  <div class="image-upload-area" id="front-upload">
+                    <input
+                      type="file"
+                      id="front-image"
+                      name="front-image"
+                      accept="image/*"
+                      capture="environment"
+                      required
+                    />
+                    <label for="front-image" class="upload-label">
+                      <div class="upload-icon">
+                        <svg
+                          width="48"
+                          height="48"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                          />
+                          <circle cx="12" cy="13" r="3" />
+                        </svg>
+                      </div>
+                      <div class="upload-text">
+                        <span class="primary-text">Take Photo</span>
+                        <span class="secondary-text">or tap to upload</span>
+                      </div>
+                    </label>
+                    <div
+                      class="image-preview"
+                      id="front-preview"
+                      style="display: none"
+                    >
+                      <img src="" alt="Front of check" />
+                      <button
+                        type="button"
+                        class="remove-image"
+                        data-target="front"
+                        aria-label="Remove image"
+                      >
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <line x1="18" y1="6" x2="6" y2="18" />
+                          <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="image-upload-container">
+                  <h3>Back of Check</h3>
+                  <div class="image-upload-area" id="back-upload">
+                    <input
+                      type="file"
+                      id="back-image"
+                      name="back-image"
+                      accept="image/*"
+                      capture="environment"
+                      required
+                    />
+                    <label for="back-image" class="upload-label">
+                      <div class="upload-icon">
+                        <svg
+                          width="48"
+                          height="48"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                          />
+                          <circle cx="12" cy="13" r="3" />
+                        </svg>
+                      </div>
+                      <div class="upload-text">
+                        <span class="primary-text">Take Photo</span>
+                        <span class="secondary-text">or tap to upload</span>
+                      </div>
+                    </label>
+                    <div
+                      class="image-preview"
+                      id="back-preview"
+                      style="display: none"
+                    >
+                      <img src="" alt="Back of check" />
+                      <button
+                        type="button"
+                        class="remove-image"
+                        data-target="back"
+                        aria-label="Remove image"
+                      >
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <line x1="18" y1="6" x2="6" y2="18" />
+                          <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="deposit-actions">
+            <button type="button" class="btn btn-bank-outline">Cancel</button>
+            <button type="submit" class="btn btn-bank-primary" disabled>
+              Submit Deposit
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Secondary">
+      <ul>
+        <li class="active">
+          <a href="{% url 'portfolio' %}" aria-label="Dashboard">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="8" height="8" rx="2"></rect>
+                <rect x="13" y="3" width="8" height="12" rx="2"></rect>
+                <rect x="3" y="13" width="8" height="8" rx="2"></rect>
+              </svg>
+            </span>
+            <span class="label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'transfer' %}" aria-label="Transfer">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 7h13l-3-3"></path>
+                <path d="M17 17H4l3 3"></path>
+              </svg>
+            </span>
+            <span class="label">Transfer</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'contactus' %}" aria-label="Deposit">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+              </svg>
+            </span>
+            <span class="label">Deposit</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'mycards' %}" aria-label="Stocks">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+              </svg>
+            </span>
+            <span class="label">Stocks</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'profile' %}" aria-label="Profile">
+            <span class="icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <span class="label">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

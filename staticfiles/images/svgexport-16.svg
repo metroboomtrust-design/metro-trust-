@@ -1,0 +1,5 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="contact-logo" width="25"  height="25" ><defs><svg id="caret-up" viewBox="0 0 24 16.04">
+        <path d="M0.78,15.07L10.13,4.83a2.49,2.49,0,0,1,3.74,0l9.35,10.24a3.1,3.1,0,0,1,0,4.1,2.49,2.49,0,0,1-3.74,0L12,11,4.52,19.17a2.49,2.49,0,0,1-3.74,0A3.1,3.1,0,0,1,.78,15.07Z" transform="translate(0 -3.98)"></path>
+    </svg></defs>
+        <use href="/library/img/icons/icons.svg#caret-up" fill="#FFFFFF" xlink:href="#caret-up"></use>
+    </svg>

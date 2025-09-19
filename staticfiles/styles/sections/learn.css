@@ -1,0 +1,86 @@
+/* Learning (articles) grid */
+.learn {
+  background: var(--color-bg-light);
+  padding: 3rem 0 4rem;
+}
+.learn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.learn-title {
+  color: var(--color-text-primary);
+  font-size: 2rem;
+  font-weight: 400;
+}
+.learn-cta {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border: 0;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+.learn-card {
+  background: var(--color-bg-white);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 1.25rem;
+  align-items: start;
+}
+.learn-card h3 {
+  color: var(--color-text-medium);
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+.learn-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.45;
+}
+.learn-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.learn-link {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.learn-link .dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text-medium);
+}
+
+@media (max-width: 992px) {
+  .learn-grid {
+    grid-template-columns: 1fr;
+  }
+  .learn-card {
+    grid-template-columns: 1fr;
+  }
+}

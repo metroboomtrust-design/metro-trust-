@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.secOne{
+    background-color: #003087;
+    margin-bottom: 20px;
+}
+.firstp{
+    color: #4570b9;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.firstp span{
+    color: black;
+}
+
+.secOne ul{
+    text-decoration: none;
+}
+.sectionOne{
+    position: relative;
+}
+.imgFulton{
+    margin-right: 100px;
+}
+.nav-link:hover {
+    border-bottom: 3px solid white;
+}
+.contain1h1{
+    font-size: 3.5rem;
+    line-height: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+.contain1 p{
+	color: #222222;
+}
+.contain2{
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+.contain2h3{
+    text-align: center;
+    padding-bottom: 40px;
+}
+.contain2 img{
+    padding: 20px 0;
+}
+.contain2 p{
+    font-size: 1rem;
+}
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.flex1 div{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container.flex1 div:hover {
+    transform: translateY(-10px); 
+}
+.flex1 h5{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.flex1 p{
+    font-size: 0.9rem;
+}
+.xxx{
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: #003087;
+    font-weight: bold;
+}
+.contain3{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 50px 0;
+}
+.sectionSix{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.sectionSix div{
+    border-right: 1px solid gray;
+}
+.sectionSix img{
+    width: 50px;
+    height: 50px;
+}
+.sectionSix h2{
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    color: blue;
+    cursor: pointer;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+.sectionSix h2,.txt:hover{
+    color: #003087;
+}
+.sectionSix p{
+    font-size: 1.2rem;
+}
+.txt{
+     box-sizing: border-box;
+     cursor: pointer;
+     font-family: "Open Sans", sans-serif;
+     font-size: 0.8rem;
+     font-weight: 700;
+     letter-spacing: 1px;
+     line-height: 14px;
+     text-align: center;
+     text-transform: uppercase;
+}
+.sectionSeven{
+    border-top: 1px solid gray;
+    padding-top: 30px;
+}
+
+.sectionSeven h2{
+    color: #6C7788;;
+    font-size: 1.3rem;
+}
+.sectionSevenText{
+    display: flex;
+    gap: 50px;
+}
+
+.sectionSevenText p{
+    color: #6C7788;;
+    width: 70%;
+    font-size: 1rem;
+}
+.sectionSevenImg{
+    margin-top: 70px;
+}
+.sectionSevenText2{
+    text-align: center;
+    margin: 20px 430px;
+}
+.sectionSevenText2 p{
+    font-size: 0.9rem;
+}
+.sectionEight{
+    
+    background-color: #3f495a;
+    
+}
+.sectionEightSec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sectionEightSec img{
+    padding: 20px 0;
+}
+.nine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nineUl{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+.nineUl a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+@media only screen and (max-width: 1024px) {
+    .sectionSix{
+        font-size: 1rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .txt{
+        display: none;
+    }
+    .sectionSix img{
+        width: 40px;
+        height: 40px;
+    }
+    .sectionSix p{
+        display: none;
+    }
+    .sectionSix h2{
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .flex1{
+        display: block;
+    }
+    .sectionSevenText {
+        display: block;
+    }
+     .sectionSevenText p{
+        width: 100%;
+    }
+    .sectionSevenText2{
+        margin: 0;
+        padding: 15px 0;
+    }
+    .sectionEightSec{
+        display: block;
+    }
+    .sectionEight button{
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+    }
+    .nine{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+   
+}

@@ -1,0 +1,304 @@
+.main-content {
+  display: flex;
+  gap: var(--spacing-xl);
+  width: 100%;
+  overflow: hidden;
+}
+
+.my-cards-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  height: 100%;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: var(--spacing-xl);
+}
+
+.atm-card-container {
+  width: 340px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.atm-card-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.atm-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.atm-card-front {
+  background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+}
+
+.atm-card-back {
+  background: linear-gradient(45deg, #2a2a2a, #5a5a5a);
+  transform: rotateY(180deg);
+}
+
+.atm-card-chip {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(45deg, #bdbdbd, #f0f0f0);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.atm-card-chip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 120%;
+  height: 1px;
+  background-color: #4a4a4a;
+}
+
+.atm-card-chip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 120%;
+  background-color: #4a4a4a;
+}
+
+.atm-card-issuer {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.atm-card-number {
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.atm-card-holder {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.atm-card-expiry {
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.atm-card-expiry span {
+  font-size: 14px;
+}
+
+.atm-card-hologram {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+  border-radius: 5px;
+  opacity: 0.7;
+  animation: atm-card-hologram-effect 5s infinite;
+}
+
+@keyframes atm-card-hologram-effect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.atm-card-magnetic-strip {
+  width: 100%;
+  height: 40px;
+  background-color: #1a1a1a;
+  margin: 20px 0;
+}
+
+.atm-card-signature {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.atm-card-signature p {
+  margin: 0;
+  font-size: 10px;
+  color: #1a1a1a;
+}
+
+.signature-line {
+  width: 100%;
+  height: 30px;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.atm-card-cvv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.atm-card-cvv p {
+  margin: 0;
+  font-size: 10px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.cvv-box {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.atm-card-info {
+  font-size: 8px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.atm-card-container:hover .atm-card-wrapper {
+  transform: rotateY(180deg);
+}
+
+/* nom-card-dashboard.css */
+
+.nom-card-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.nom-stat-card {
+  background: linear-gradient(45deg, #2a2a2a, #353535);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.nom-stat-card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.nom-stat-card p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nom-card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nom-action-button {
+  background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.nom-action-button:hover {
+  transform: translateY(-2px);
+}
+
+.nom-action-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nom-card-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .nom-card-actions {
+    flex-direction: column;
+  }
+
+  .nom-action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-cards-section {
+    padding: var(--spacing-lg);
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .cards-grid {
+    flex-direction: column;
+    margin: auto 0;
+  }
+
+  .virtual-card {
+    min-height: 160px;
+  }
+}

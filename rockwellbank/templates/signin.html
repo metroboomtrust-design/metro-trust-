@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextrust Equity Bank</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/nexus_logo.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="container-fluid">
+    <div class="contain1">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/Atlas_Equity-removebg-preview.png' %}" alt="">
+      </a>
+    </div>
+<section class="contain2">
+    <div class="container flex1 ">
+    <div class="first imgtext">
+        <h1 class="fw-bold">Easily manage your credit card account.</h1>
+        <div class="img1"></div>
+    </div>
+    <div class="second shadow p-3 contain3">
+        <form id="login-form" action="" method="POST">
+          {%csrf_token%}
+            <div class="mb-3 ">
+                <h2>Account </h2>
+                {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+              <label for="username" class="form-label">Account Number</label>
+              <input type="text" id="username" name="username" class="form-control"  aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" id="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            
+            <button type="submit" class="btn btn1 w-100">Log in</button>
+          </form>
+          <div class="pt-3">
+          <p class="py-1 "><a href="{% url 'register' %}" class="text-decoration-none col1">Don't have an account ? <span>Sign up</span></a></p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="d-flex justify-content-center align-items-start p-">
+<div class="second shadow  contain3 show">
+  <form id="login-form" action="" method="POST" >
+      {%csrf_token%}
+            <div class="mb-3 ">
+                <h2> </h2>
+                {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      <div class="mb-3 ">
+          <h2></h2>
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      
+      <button type="submit" class="btn btn1 w-100">Log in</button>
+    </form>
+    <div class="pt-3">
+    <p class="py-1 "><a href="{% url 'register' %}" class="text-decoration-none col1">Don't have an account ? <span>Sign up</span></a></p>
+  </div>
+</section>
+</div>
+<div class="hb1">
+
+</div>
+<section class="footerbg">
+  <div class="container py-3">
+    <div class="hb"></div>
+    <p><a href="#" class="text-white text-decoration-none bbb">Privacy policy</a></p>
+    <p><a href="#" class="text-white text-decoration-none bbb">Your California privacy choices</a></p>
+    <p><a href="#" class="text-white text-decoration-none bbb">Contact us</a></p>
+    <p><a href="#" class="text-white text-decoration-none bbb">Cobrowse</a></p>
+    <p><a href="#" class="text-white text-decoration-none bbb">System requirement</a></p>
+    <p><a href="#" class="text-white text-decoration-none bbb">Connection secured</a></p>
+    <p class="text-white bbb">© 2024 Nextrust Equity Bank</p>
+    <p class="text-white bbb">The creditor and issuer of this card is Nextrust Equity Bank, pursuant to a license from Visa U.S.A. Inc. or Mastercard International Incorporated. Mastercard is a registered trademark, and the circles design is a trademark of Mastercard International Incorporated. American Express is a federally registered service mark of American Express and is used by Elan Financial Services pursuant to license</p>
+    
+  </div>
+</section>
+</section>
+<!-- Chatra {literal} -->
+<script>
+  (function(d, w, c) {
+      w.ChatraID = '3FEJLoG5duPww7YTf';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+          (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+  })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+</body>
+</html>
