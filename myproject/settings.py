@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-uig^xd^lulg4u#k*fm62x*=6bqk2h^c4ox!c8+0%+m0h#0nmg#
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'nextrustlead.onrender.com', 'nextrustequity.cfd', 'www.nextrustequity.cfd', 'nextrust.onrender.com', 'localhost:8000' ]
+ALLOWED_HOSTS = ['127.0.0.1', 'metro-trust.onrender.com', 'localhost:8000' ]
 
 
 # Application definition

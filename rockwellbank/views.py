@@ -445,63 +445,13 @@ def signin(request):
 
 
 
-def register(request):
-    if request.method == "POST":
-        user_form = UserPortfolioForm(request.POST)
-        profile_form = PortfolioForm(request.POST, request.FILES)
-
-        if user_form.is_valid() and profile_form.is_valid():
-            with transaction.atomic():  # Ensure atomicity
-                user = user_form.save()
-                profile = profile_form.save(commit=False)
-                profile.user = user  # Link user to portfolio
-                profile.save()
-
-            # Send email confirmation
-            email_message = f"""
-            Dear {user.username}, 
-
-            Welcome to Nextrust Equity! We’re excited to have you on board. 
-            We have received your government-issued ID and started the verification process. 
-            This typically takes 10 to 15 minutes. 
-
-            If you have questions, contact us at support@nextrustequity.cfd. We’re here to help! 
-            
-            Thank you for choosing Nextrust Equity. We look forward to serving you! 
-
-            Warm regards,  
-            The Nextrust Equity Team
-            """
-
-            send_mail(
-                subject='Your Account Verification is in Progress',
-                message=email_message,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[user.email],
-                fail_silently=False,
-            )
-
-            messages.success(request, "You have registered successfully! Please check your email.")
-            return redirect('signin')
-
-        else:
-            print("User Form Errors:", user_form.errors)
-            print("Profile Form Errors:", profile_form.errors)
-            messages.error(request, 'Oops! Something went wrong. Please check the form and try again.')
-
-    else:
-        user_form = UserPortfolioForm()
-        profile_form = PortfolioForm()
-
-    context = {'user_form': user_form, 'profile_form': profile_form}
-    return render(request, 'register.html', context)
 
 
         
 
 def logout(request):
     auth.logout(request)
-    return redirect('signin')
+    return redirect('home')
 
 
 
